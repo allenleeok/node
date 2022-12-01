@@ -48,7 +48,7 @@
       # 'lib/cluster.js',
       'lib/dgram.js',
       'lib/dns.js',
-      # 'lib/domain.js',
+      'lib/domain.js', # 1
       'lib/events.js',
       'lib/fs.js',
       'lib/http.js',
@@ -63,7 +63,7 @@
       'lib/inspector.js',
       'lib/module.js',
       'lib/net.js',
-      # 'lib/os.js',
+      'lib/os.js', # 1
       'lib/path.js',
       'lib/perf_hooks.js', # 1
       'lib/process.js',
