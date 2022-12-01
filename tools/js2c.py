@@ -137,7 +137,7 @@ def JS2C(source_files, target):
   # Build source code lines
   definitions = []
   initializers = []
-
+  print("JS2C start ...........")
   for filename in source_files['.js']:
     print(filename)
     AddModule(filename, definitions, initializers)
