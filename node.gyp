@@ -85,7 +85,7 @@
       'lib/_tls_common.js',
       'lib/_tls_wrap.js',
       # 'lib/trace_events.js',
-      'lib/tty.js', # 1
+      # 'lib/tty.js',
       'lib/url.js',
       'lib/util.js',
       'lib/v8.js', # 1
