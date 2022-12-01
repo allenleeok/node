@@ -48,7 +48,7 @@
       # 'lib/cluster.js',
       'lib/dgram.js',
       'lib/dns.js',
-      'lib/domain.js', # 1
+      # 'lib/domain.js',
       'lib/events.js',
       'lib/fs.js',
       'lib/http.js',
@@ -63,13 +63,13 @@
       'lib/inspector.js',
       'lib/module.js',
       'lib/net.js',
-      'lib/os.js', # 1
+      # 'lib/os.js',
       'lib/path.js',
-      'lib/perf_hooks.js', # 1
+      # 'lib/perf_hooks.js',
       'lib/process.js',
       'lib/punycode.js',
       'lib/querystring.js',
-      'lib/readline.js', # 1
+      # 'lib/readline.js',
       'lib/repl.js', # 1
       'lib/stream.js',
       'lib/_stream_readable.js',
