@@ -89,7 +89,7 @@
       'lib/url.js',
       'lib/util.js',
       # 'lib/v8.js',
-      # 'lib/vm.js',
+      'lib/vm.js',
       'lib/wasi.js',
       'lib/worker_threads.js',
       'lib/zlib.js',
