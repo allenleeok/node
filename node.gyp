@@ -67,7 +67,7 @@
       'lib/path.js',
       # 'lib/perf_hooks.js',
       'lib/process.js',
-      # 'lib/punycode.js',
+      'lib/punycode.js',
       'lib/querystring.js',
       # 'lib/readline.js',
       # 'lib/repl.js',
