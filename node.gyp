@@ -89,7 +89,7 @@
       'lib/url.js',
       'lib/util.js',
       'lib/v8.js', # 1
-      'lib/vm.js', # 内部依赖
+      'lib/vm.js',
       'lib/wasi.js',
       'lib/worker_threads.js',
       'lib/zlib.js',
