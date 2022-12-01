@@ -139,6 +139,7 @@ def JS2C(source_files, target):
   initializers = []
 
   for filename in source_files['.js']:
+    print(filename)
     AddModule(filename, definitions, initializers)
 
   config_def, config_size = handle_config_gypi(source_files['config.gypi'])
