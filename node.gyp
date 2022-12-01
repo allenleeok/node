@@ -65,12 +65,12 @@
       'lib/net.js',
       # 'lib/os.js',
       'lib/path.js',
-      # 'lib/perf_hooks.js',
+      'lib/perf_hooks.js', # 1
       'lib/process.js',
       'lib/punycode.js',
       'lib/querystring.js',
-      # 'lib/readline.js',
-      # 'lib/repl.js',
+      'lib/readline.js', # 1
+      'lib/repl.js', # 1
       'lib/stream.js',
       'lib/_stream_readable.js',
       'lib/_stream_writable.js',
@@ -84,11 +84,11 @@
       'lib/tls.js',
       'lib/_tls_common.js',
       'lib/_tls_wrap.js',
-      # 'lib/trace_events.js',
-      # 'lib/tty.js',
+      'lib/trace_events.js', # 1
+      'lib/tty.js', # 1
       'lib/url.js',
       'lib/util.js',
-      # 'lib/v8.js',
+      'lib/v8.js', # 1
       'lib/vm.js',
       'lib/wasi.js',
       'lib/worker_threads.js',
