@@ -70,7 +70,7 @@
       'lib/punycode.js',
       'lib/querystring.js',
       # 'lib/readline.js',
-      'lib/repl.js', # 1
+      # 'lib/repl.js',
       'lib/stream.js',
       'lib/_stream_readable.js',
       'lib/_stream_writable.js',
@@ -84,12 +84,12 @@
       'lib/tls.js',
       'lib/_tls_common.js',
       'lib/_tls_wrap.js',
-      'lib/trace_events.js', # 1
+      # 'lib/trace_events.js',
       'lib/tty.js', # 1
       'lib/url.js',
       'lib/util.js',
       'lib/v8.js', # 1
-      'lib/vm.js',
+      'lib/vm.js', # 内部依赖
       'lib/wasi.js',
       'lib/worker_threads.js',
       'lib/zlib.js',
