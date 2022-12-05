@@ -423,10 +423,10 @@ MaybeLocal<Value> StartMainThreadExecution(Environment* env) {
     return StartExecution(env, "internal/main/print_help");
   }
 
-
-  if (env->options()->prof_process) {
-    return StartExecution(env, "internal/main/prof_process");
-  }
+  // 为减少包体积，暂时不支持
+  // if (env->options()->prof_process) {
+  //   return StartExecution(env, "internal/main/prof_process");
+  // }
 
   // -e/--eval without -i/--interactive
   if (env->options()->has_eval_string && !env->options()->force_repl) {
@@ -441,9 +441,10 @@ MaybeLocal<Value> StartMainThreadExecution(Environment* env) {
     return StartExecution(env, "internal/main/run_main_module");
   }
 
-  if (env->options()->force_repl || uv_guess_handle(STDIN_FILENO) == UV_TTY) {
-    return StartExecution(env, "internal/main/repl");
-  }
+  // 为减少包体积，暂时不支持
+  // if (env->options()->force_repl || uv_guess_handle(STDIN_FILENO) == UV_TTY) {
+  //   return StartExecution(env, "internal/main/repl");
+  // }
 
   return StartExecution(env, "internal/main/eval_stdin");
 }
