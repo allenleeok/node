@@ -68,7 +68,6 @@
   V(process_methods)                                                           \
   V(serdes)                                                                    \
   V(signal_wrap)                                                               \
-  V(spawn_sync)                                                                \
   V(stream_pipe)                                                               \
   V(stream_wrap)                                                               \
   V(string_decoder)                                                            \
@@ -86,6 +85,7 @@
   V(v8)                                                                        \
   V(worker)                                                                    \
   V(zlib)
+  // V(spawn_sync)
 
 #define NODE_BUILTIN_MODULES(V)                                                \
   NODE_BUILTIN_STANDARD_MODULES(V)                                             \
