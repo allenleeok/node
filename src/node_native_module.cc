@@ -100,8 +100,9 @@ void NativeModuleLoader::InitializeModuleCategories() {
       "sys",  // Deprecated.
       "wasi",  // Experimental.
       "internal/test/binding",
-      "internal/v8_prof_polyfill",
-      "internal/v8_prof_processor",
+      // TODO: 包体积优化，移除分析 V8 模块功能
+      // "internal/v8_prof_polyfill",
+      // "internal/v8_prof_processor",
   };
 
   for (auto const& x : source_) {
