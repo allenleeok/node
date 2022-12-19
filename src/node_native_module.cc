@@ -100,7 +100,7 @@ void NativeModuleLoader::InitializeModuleCategories() {
       "sys",  // Deprecated.
       "wasi",  // Experimental.
       "internal/test/binding",
-      // V8 分析器输出
+      // TODO: 包体积优化，移除分析 V8 模块功能
       // "internal/v8_prof_polyfill",
       // "internal/v8_prof_processor",
   };
