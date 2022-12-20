@@ -98,8 +98,8 @@
       'lib/internal/async_hooks.js',
       'lib/internal/buffer.js',
       'lib/internal/cli_table.js',
-      'lib/internal/child_process.js',
-      'lib/internal/child_process/serialization.js',
+      # 'lib/internal/child_process.js',
+      # 'lib/internal/child_process/serialization.js',
       # 'lib/internal/cluster/child.js',
       # 'lib/internal/cluster/master.js',
       # 'lib/internal/cluster/round_robin_handle.js',
@@ -613,7 +613,7 @@
         'src/pipe_wrap.cc',
         'src/process_wrap.cc',
         'src/signal_wrap.cc',
-        'src/spawn_sync.cc',
+        # 'src/spawn_sync.cc',
         'src/stream_base.cc',
         'src/stream_pipe.cc',
         'src/stream_wrap.cc',
@@ -703,7 +703,7 @@
         'src/pipe_wrap.h',
         'src/req_wrap.h',
         'src/req_wrap-inl.h',
-        'src/spawn_sync.h',
+        # 'src/spawn_sync.h',
         'src/stream_base.h',
         'src/stream_base-inl.h',
         'src/stream_pipe.h',
@@ -1098,101 +1098,101 @@
         } ],
       ]
     }, # specialize_node_d
-    # {
-    #   'target_name': 'cctest',
-    #   'type': 'executable',
+    {
+      'target_name': 'cctest',
+      'type': 'executable',
 
-    #   'dependencies': [
-    #     '<(node_lib_target_name)',
-    #     'deps/histogram/histogram.gyp:histogram',
-    #     'deps/uvwasi/uvwasi.gyp:uvwasi',
-    #     'node_dtrace_header',
-    #     'node_dtrace_ustack',
-    #     'node_dtrace_provider',
-    #   ],
+      'dependencies': [
+        '<(node_lib_target_name)',
+        'deps/histogram/histogram.gyp:histogram',
+        'deps/uvwasi/uvwasi.gyp:uvwasi',
+        'node_dtrace_header',
+        'node_dtrace_ustack',
+        'node_dtrace_provider',
+      ],
 
-    #   'includes': [
-    #     'node.gypi'
-    #   ],
+      'includes': [
+        'node.gypi'
+      ],
 
-    #   'include_dirs': [
-    #     'src',
-    #     'tools/msvs/genfiles',
-    #     'deps/v8/include',
-    #     'deps/cares/include',
-    #     'deps/uv/include',
-    #     'deps/uvwasi/include',
-    #     'test/cctest',
-    #   ],
+      'include_dirs': [
+        'src',
+        'tools/msvs/genfiles',
+        'deps/v8/include',
+        'deps/cares/include',
+        'deps/uv/include',
+        'deps/uvwasi/include',
+        'test/cctest',
+      ],
 
-    #   'defines': [
-    #     'NODE_ARCH="<(target_arch)"',
-    #     'NODE_PLATFORM="<(OS)"',
-    #     'NODE_WANT_INTERNALS=1',
-    #   ],
+      'defines': [
+        'NODE_ARCH="<(target_arch)"',
+        'NODE_PLATFORM="<(OS)"',
+        'NODE_WANT_INTERNALS=1',
+      ],
 
-    #   'sources': [
-    #     'src/node_snapshot_stub.cc',
-    #     'src/node_code_cache_stub.cc',
-    #     'test/cctest/gtest/gtest-all.cc',
-    #     'test/cctest/gtest/gtest_main.cc',
-    #     'test/cctest/node_test_fixture.cc',
-    #     'test/cctest/node_test_fixture.h',
-    #     'test/cctest/test_aliased_buffer.cc',
-    #     'test/cctest/test_base64.cc',
-    #     'test/cctest/test_base_object_ptr.cc',
-    #     'test/cctest/test_node_postmortem_metadata.cc',
-    #     'test/cctest/test_environment.cc',
-    #     'test/cctest/test_linked_binding.cc',
-    #     'test/cctest/test_per_process.cc',
-    #     'test/cctest/test_platform.cc',
-    #     'test/cctest/test_json_utils.cc',
-    #     'test/cctest/test_sockaddr.cc',
-    #     'test/cctest/test_traced_value.cc',
-    #     'test/cctest/test_util.cc',
-    #     'test/cctest/test_url.cc',
-    #   ],
+      'sources': [
+        'src/node_snapshot_stub.cc',
+        'src/node_code_cache_stub.cc',
+        'test/cctest/gtest/gtest-all.cc',
+        'test/cctest/gtest/gtest_main.cc',
+        'test/cctest/node_test_fixture.cc',
+        'test/cctest/node_test_fixture.h',
+        'test/cctest/test_aliased_buffer.cc',
+        'test/cctest/test_base64.cc',
+        'test/cctest/test_base_object_ptr.cc',
+        'test/cctest/test_node_postmortem_metadata.cc',
+        'test/cctest/test_environment.cc',
+        'test/cctest/test_linked_binding.cc',
+        'test/cctest/test_per_process.cc',
+        'test/cctest/test_platform.cc',
+        'test/cctest/test_json_utils.cc',
+        'test/cctest/test_sockaddr.cc',
+        'test/cctest/test_traced_value.cc',
+        'test/cctest/test_util.cc',
+        'test/cctest/test_url.cc',
+      ],
 
-    #   'conditions': [
-    #     [ 'node_use_openssl=="true"', {
-    #       'defines': [
-    #         'HAVE_OPENSSL=1',
-    #       ],
-    #     }],
-    #     ['v8_enable_inspector==1', {
-    #       'sources': [
-    #         'test/cctest/test_inspector_socket.cc',
-    #         'test/cctest/test_inspector_socket_server.cc'
-    #       ],
-    #       'defines': [
-    #         'HAVE_INSPECTOR=1',
-    #       ],
-    #     }, {
-    #        'defines': [
-    #          'HAVE_INSPECTOR=0',
-    #        ]
-    #     }],
-    #     ['OS=="solaris"', {
-    #       'ldflags': [ '-I<(SHARED_INTERMEDIATE_DIR)' ]
-    #     }],
-    #     # Skip cctest while building shared lib node for Windows
-    #     [ 'OS=="win" and node_shared=="true"', {
-    #       'type': 'none',
-    #     }],
-    #     [ 'node_shared=="true"', {
-    #       'xcode_settings': {
-    #         'OTHER_LDFLAGS': [ '-Wl,-rpath,@loader_path', ],
-    #       },
-    #     }],
-    #     ['OS=="win"', {
-    #       'libraries': [
-    #         'Dbghelp.lib',
-    #         'winmm.lib',
-    #         'Ws2_32.lib',
-    #       ],
-    #     }],
-    #   ],
-    # }, # cctest
+      'conditions': [
+        [ 'node_use_openssl=="true"', {
+          'defines': [
+            'HAVE_OPENSSL=1',
+          ],
+        }],
+        ['v8_enable_inspector==1', {
+          'sources': [
+            'test/cctest/test_inspector_socket.cc',
+            'test/cctest/test_inspector_socket_server.cc'
+          ],
+          'defines': [
+            'HAVE_INSPECTOR=1',
+          ],
+        }, {
+           'defines': [
+             'HAVE_INSPECTOR=0',
+           ]
+        }],
+        ['OS=="solaris"', {
+          'ldflags': [ '-I<(SHARED_INTERMEDIATE_DIR)' ]
+        }],
+        # Skip cctest while building shared lib node for Windows
+        [ 'OS=="win" and node_shared=="true"', {
+          'type': 'none',
+        }],
+        [ 'node_shared=="true"', {
+          'xcode_settings': {
+            'OTHER_LDFLAGS': [ '-Wl,-rpath,@loader_path', ],
+          },
+        }],
+        ['OS=="win"', {
+          'libraries': [
+            'Dbghelp.lib',
+            'winmm.lib',
+            'Ws2_32.lib',
+          ],
+        }],
+      ],
+    }, # cctest
 
     # TODO(joyeecheung): do not depend on node_lib,
     # instead create a smaller static library node_lib_base that does
